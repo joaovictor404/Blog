@@ -32,32 +32,29 @@
 
         <div class="container mt-4">
             <div class="row">
-                {% for aluno in alunos %}
-    
-                    <div class="col-md-12">
-                        <div class="card mb-4 shadow-sm">
-                            <div class="card-body d-flex">
-                                <!-- Imagem à esquerda com tamanho fixo -->
-                                <div class="card-img" style="width: 300px; height: 400px; flex-shrink: 0;">
-                                    <!-- Substitua o src pela variável ou URL da imagem real -->
-                                    <img src="{{ aluno.image.url }}" alt="Imagem do Aluno" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover; border-radius: 5px;">
-                                </div>
-                                <!-- Conteúdo do curso -->
-                                <div class="ml-3" style="flex-grow: 1;">
-                                    <h5 class="card-title p-2 bg-primary text-white">{{ aluno.nome }}</h5>
-                                    <p class="card-text">Idade: {{ aluno.idade }}</p>
-                                    <p class="card-text">CPF: {{ aluno.cpf }}</p>
-                                    <p class="card-text">Email: {{ aluno.email }}</p>
-                                    <p class="card-text">Data de Nascimento: {{ aluno.data_nascimento }}</p>
-                                    <a href="{% url 'detalhe_aluno' aluno.id %}" class="btn btn-primary">Ver mais detalhes</a>
+            
+                            <div class="col-md-12">
+                                <div class="card mb-4 shadow-sm">
+                                    <div class="card-body d-flex">
+                                        <!-- Imagem à esquerda com tamanho fixo -->
+                                        <div class="card-img" style="width: 300px; height: 400px; flex-shrink: 0;">
+                                            <!-- Substitua o src pela variável ou URL da imagem real -->
+                                            <img src="{{ aluno_selecionado.image.url }}" alt="Imagem do Aluno" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover; border-radius: 5px;">
+                                        </div>
+                                        <!-- Conteúdo do curso -->
+                                        <div class="ml-3" style="flex-grow: 1;">
+                                            <h5 class="card-title p-2 bg-primary text-white">{{ aluno_selecionado.nome }}</h5>
+                                            <p class="card-text">Idade: {{ aluno_selecionado.idade }}</p>
+                                            <p class="card-text">CPF: {{ aluno_selecionado.cpf }}</p>
+                                            <p class="card-text">Email: {{ aluno_selecionado.email }}</p>
+                                            <p class="card-text">Data de Nascimento: {{ aluno_selecionado.data_nascimento }}</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+
                     </div>
-                     
-                {% endfor %}
-            </div>
-        </div>
+                </div>
 
         <!-- Footer-->
         <footer class="py-5 bg-dark">
